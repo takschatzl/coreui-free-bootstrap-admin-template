@@ -200,68 +200,60 @@ const cardChart4 = new Chart($('#card-chart4'), {
 })
 
 // eslint-disable-next-line no-unused-vars
-const mainChart = new Chart($('#main-chart'), {
+const lineChart = new Chart($('#canvas-1'), {
   type: 'line',
   data: {
-    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S'],
-    datasets: [
+    labels: ['8/7B 0-6●', '8/8B 2-11●', '8/10H 0-6●', '8/11H 0-6●', '8/12H 0-6●', '8/13M 0-6●', '8/14M 0-6●', '8/15M 0-6○', '8/17E 0-6○', '8/18E 5-5△'],
+    datasets : [
       {
-        label: 'My First dataset',
-        backgroundColor: hexToRgba(getStyle('--info'), 10),
-        borderColor: getStyle('--info'),
-        pointHoverBackgroundColor: '#fff',
-        borderWidth: 2,
-        data: [165, 180, 70, 69, 77, 57, 125, 165, 172, 91, 173, 138, 155, 89, 50, 161, 65, 163, 160, 103, 114, 185, 125, 196, 183, 64, 137, 95, 112, 175]
+        label: '勝率',
+        backgroundColor : 'rgba(220, 220, 220, 0.2)',
+        borderColor : 'rgba(220, 220, 220, 1)',
+        pointBackgroundColor : 'rgba(220, 220, 220, 1)',
+        pointBorderColor : '#fff',
+        data: [0.525, 0.520, 0.515, 0.510, 0.505, 0.500, 0.495, 0.491, 0.495, 0.495], 
+        yAxisID: "y-axis-1", 
       },
       {
-        label: 'My Second dataset',
-        backgroundColor: 'transparent',
-        borderColor: getStyle('--success'),
-        pointHoverBackgroundColor: '#fff',
-        borderWidth: 2,
-        data: [92, 97, 80, 100, 86, 97, 83, 98, 87, 98, 93, 83, 87, 98, 96, 84, 91, 97, 88, 86, 94, 86, 95, 91, 98, 91, 92, 80, 83, 82]
-      },
-      {
-        label: 'My Third dataset',
-        backgroundColor: 'transparent',
-        borderColor: getStyle('--danger'),
-        pointHoverBackgroundColor: '#fff',
-        borderWidth: 1,
-        borderDash: [8, 5],
-        data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65]
+        label: '勝数',
+        backgroundColor : 'rgba(151, 187, 205, 0.2)',
+        borderColor : 'rgba(151, 187, 205, 1)',
+        pointBackgroundColor : 'rgba(151, 187, 205, 1)',
+        pointBorderColor : '#fff',
+        data: [57, 58, 58, 58, 58, 58, 58, 58, 59, 59],
+        yAxisID: "y-axis-2", 
       }
     ]
   },
   options: {
-    maintainAspectRatio: false,
-    legend: {
-      display: false
-    },
-    scales: {
+    responsive: true
+    , scales: {
       xAxes: [{
         gridLines: {
           drawOnChartArea: false
         }
       }],
       yAxes: [{
-        ticks: {
-          beginAtZero: true,
-          maxTicksLimit: 5,
-          stepSize: Math.ceil(250 / 5),
-          max: 250
-        }
-      }]
+              id: "y-axis-1",   // Y軸のID
+              type: "linear",   // linear固定 
+              position: "left", // どちら側に表示される軸か？
+            }, {
+              id: "y-axis-2",
+              type: "linear", 
+              position: "right",
+              // ticks: {
+              //   max: 65
+              //   , min: 50
+              //   , stepSize: 5
+              //   },
+              gridLines: {
+                drawOnChartArea: false
+              }
+        }]
     },
-    elements: {
-      point: {
-        radius: 0,
-        hitRadius: 10,
-        hoverRadius: 4,
-        hoverBorderWidth: 3
-      }
-    }
   }
 })
+
 
 const brandBoxChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July']
 
