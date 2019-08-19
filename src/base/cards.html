@@ -361,344 +361,101 @@
         </ol>
         <div class="container-fluid">
           <div class="animated fadeIn">
-            <div class="row">
-              <div class="col-sm-6 col-md-4">
-                <div class="card">
-                  <div class="card-header">Card title</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card">
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                  <div class="card-footer">Card footer</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card">
-                  <div class="card-header">
-                    <i class="fa fa-check"></i>Card with icon</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card">
-                  <div class="card-header">Card with switch
-                    <div class="card-header-actions" style="height: 21px;">
-                      <label class="switch switch-sm switch-label switch-info" tabindex="0">
-                        <input type="checkbox" class="switch-input" checked>
-                        <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
-                      </label>
+              <div id="content">
+                  <form id="form" name="form" action="javascript:void(0);">
+                    <!-- 一覧検索結条件 -->
+                    <div class="caption caption-theme-color clearfix">
+                      <span id="trendHelpIcon" class="helpIcon"></span>
+                      <div style="float:left"><label>トレンドレポート</label></div>
+                      <div id="errormsg" class="errormsg float_left hidden"></div>
                     </div>
+                    <table class="detailInputTable">
+                      <tbody><tr>
+                        <th class="label-text label-theme-color size1">
+                          <label>選手</label>
+                        </th>
+                        <td colspan="3" style="white-space: nowrap;">
+                          <select id="kyudan" name="kyudan"><option value="11">日本ハム</option><option value="18">西武</option><option value="9">ソフトバンク</option><option value="4">オリックス</option><option value="14">ロッテ</option><option value="21">楽天</option><option value="16">広島</option><option value="19">ヤクルト</option><option value="1">巨人</option><option value="13">ＤｅＮＡ</option><option value="3">中日</option><option value="2">阪神</option></select>
+                          <select id="player" name="player"><option value="">-- 表示 --</option><option value="0010000783">1：斎藤佑</option><option value="0010003184">13：生田目</option><option value="0010001943">14：加藤</option><option value="0010000999">15：上沢</option><option value="0010001604">16：有原</option><option value="0010001403">17：浦野</option><option value="0010003182">18：吉田輝</option><option value="0002005017">19：金子</option><option value="0010001942">20：上原</option><option value="0010000300">25：宮西</option><option value="0010002902">27：マルティネス</option><option value="0010003350">28：ハンコック</option><option value="0010001944">29：井口</option><option value="0010000351">31：村田</option><option value="0010003402">33：バーベイト</option><option value="0010002342">34：堀</option><option value="0010002703">35：西村</option><option value="0010000607">36：中村</option><option value="0010003186">37：柿木</option><option value="0010001483">39：秋吉</option><option value="0010003188">40：福田</option><option value="0010002849">41：ロドリゲス</option><option value="0010002704">46：田中瑛</option><option value="0010001946">47：田中豊</option><option value="0010002346">48：高山</option><option value="0010001272">49：公文</option><option value="0010002707">50：鈴木</option><option value="0010001607">51：石川直</option><option value="0010002708">52：宮台</option><option value="0010001609">53：立田</option><option value="0010002348">54：玉井</option><option value="0002007097">56：吉川</option><option value="0010001481">57：杉浦</option><option value="0010001948">59：吉田侑</option><option value="0010002706">63：北浦</option></select>
+                          
+                          <input type="radio" id="pitcher" name="position" value="01" checked="checked"><label for="pitcher">投</label>
+                          <input type="radio" id="batter" name="position" value="02"><label for="batter">打</label>
+                          <input type="radio" id="catcher" name="position" value="03"><label for="catcher">捕</label>
+                        </td>
+                        <th class="label-text label-theme-color size1">
+                          <label>年月日</label>
+                        </th>
+                        <td colspan="3" style="white-space: nowrap;">
+                          <select id="yearFrom" name="yearFrom"><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option></select>
+                          <input class="mmdd search" type="text" id="mmddFrom" style="width:45px;" value="01/01">
+                          <input class="datepicker hasDatepicker" type="text" id="datepickerFrom" style="display:none;"><button type="button" class="ui-datepicker-trigger">...</button>
+                          <select id="yearTo" name="yearTo"><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option></select>
+                          <input class="mmdd search" type="text" id="mmddTo" style="width:45px;" value="12/31">
+                          <input class="datepicker hasDatepicker" type="text" id="datepickerTo" style="display:none;"><button type="button" class="ui-datepicker-trigger">...</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="label-text label-theme-color size1">
+                          <label>指標1</label>
+                        </th>
+                        <td>
+                          <select id="indicators" name="indicators" style="width:120px"><option value="rel_speed">球速平均</option><option value="rel_speed_max">球速MAX</option><option value="rel_speed_min">球速MIN</option><option value="spin_rate">回転数</option><option value="spin_axis">回転軸</option><option value="induced_vert_break">ノビ</option><option value="horz_break">横変化</option><option value="rel_height">リリース高さ</option><option value="rel_side">リリース横</option><option value="extension">エクステンション</option><option value="exit_speed">打球速度</option><option value="tokyu_rate">投球割合</option><option value="karaburi_rate">空振り率</option><option value="bis_k_rate">Ｋ%（BIS）</option><option value="bis_bb_rate">ＢＢ%（BIS）</option><option value="bis_fip">FIP（BIS）</option><option value="bis_bougyoritsu">防御率（BIS）</option><option value="bis_whip">WHIP（BIS）</option><option value="phy_body_weight">体重</option><option value="phy_pulse">心拍数</option></select>
+                          <input type="checkbox" id="y_kotei" value="off"><label for="y_kotei">固定</label>
+                          <input type="checkbox" id="period_avg" value="off"><label for="period_avg">平均</label>
+                        </td>
+                        <th class="label-text label-theme-color size1">
+                          <label>時系列</label>
+                        </th>
+                        <td>
+                          <select id="timeSeries" name="timeSeries"><option value="day">日</option><option value="month">月</option><option value="year">年</option><option value="inning">ｲﾆﾝｸﾞ</option><option value="tokyu">投球</option></select>
+                          <select id="gameId" name="gameId" style="display:none"></select>
+                          <label class="movAvgSection">移動平均</label>
+                          <select id="movAvgSection" class="movAvgSection">
+                          <option value="0"> -- 表示 -- </option>
+                          <option value="2"> 3日</option>
+                          <option value="4"> 5日</option>
+                          <option value="9">10日</option>
+                          </select>
+                        </td>
+                        
+                        <th class="label-text label-theme-color" style="width:60px;">
+                          <label>試合</label>
+                        </th>
+                        <td>
+                          <input type="checkbox" id="shiaiShurui1" name="shiaiShurui" value="on" checked="checked"><label for="shiaiShurui1">1軍</label>
+                          <input type="checkbox" id="shiaiShurui2" name="shiaiShurui" value="on" checked="checked"><label for="shiaiShurui2">2軍</label>
+                          <input type="checkbox" id="shiaiShurui3" name="shiaiShurui" value="on"><label for="shiaiShurui3">その他</label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <!--
+                        <td colspan="4" style="border:0px">
+                        </td>  -->
+                        <th class="label-text label-theme-color size1">
+                          <label>指標2</label>
+                        </th>
+                        <td colspan="0">
+                          <select id="sub_indicators" name="indicators" style="width:120px"><option value="none">表示なし</option><option value="rel_speed">球速平均</option><option value="rel_speed_max">球速MAX</option><option value="rel_speed_min">球速MIN</option><option value="spin_rate">回転数</option><option value="spin_axis">回転軸</option><option value="induced_vert_break">ノビ</option><option value="horz_break">横変化</option><option value="rel_height">リリース高さ</option><option value="rel_side">リリース横</option><option value="extension">エクステンション</option><option value="exit_speed">打球速度</option><option value="tokyu_rate">投球割合</option><option value="karaburi_rate">空振り率</option><option value="bis_k_rate">Ｋ%（BIS）</option><option value="bis_bb_rate">ＢＢ%（BIS）</option><option value="bis_fip">FIP（BIS）</option><option value="bis_bougyoritsu">防御率（BIS）</option><option value="bis_whip">WHIP（BIS）</option><option value="phy_body_weight">体重</option><option value="phy_pulse">心拍数</option></select>
+                          <input type="checkbox" id="sub_y_kotei" value="off"><label for="sub_y_kotei">固定</label>
+                          <input type="checkbox" id="sub_period_avg" value="off"><label for="sub_period_avg">平均</label>
+                        </td>
+                        <th class="label-text label-theme-color size1">
+                          <label>色分け</label>
+                        </th>
+                        <td>
+                          <select id="colorType" name="colorType"><option value="">---</option><option value="tagged_pitch_type">球種</option><option value="pitch_call">判定</option><option value="batter_side">左右</option><option value="play_result">結果</option><option value="hit_type">打球タイプ</option></select>
+                        </td>
+                      </tr>
+                    </tbody></table>
+                  </form>
+                  <!--  <div id="errormsg" class="errormsg float_left hidden"></div> -->
+                  <div id="chart">
+                    <svg style="height: 550px;"><g class="nvd3 nv-wrap nv-lineChart" transform="translate(80,30)"><g><rect width="745" height="470" style="opacity: 0;"></rect><g class="nv-x nv-axis" transform="translate(0,470)"><g class="nvd3 nv-wrap nv-axis"><g><g class="tick" transform="translate(82.77777777777777,0)" style="opacity: 1;"><line y2="-470" x2="0"></line><text dy=".71em" y="7" x="0" style="text-anchor: middle;">4/5</text></g><g class="tick" transform="translate(165.55555555555554,0)" style="opacity: 1;"><line y2="-470" x2="0"></line><text dy=".71em" y="7" x="0" style="text-anchor: middle;">4/12</text></g><g class="tick" transform="translate(248.33333333333331,0)" style="opacity: 1;"><line y2="-470" x2="0"></line><text dy=".71em" y="7" x="0" style="text-anchor: middle;">4/20</text></g><g class="tick" transform="translate(331.1111111111111,0)" style="opacity: 1;"><line y2="-470" x2="0"></line><text dy=".71em" y="7" x="0" style="text-anchor: middle;">4/29</text></g><g class="tick" transform="translate(413.8888888888889,0)" style="opacity: 1;"><line y2="-470" x2="0"></line><text dy=".71em" y="7" x="0" style="text-anchor: middle;">5/10</text></g><g class="tick" transform="translate(496.66666666666663,0)" style="opacity: 1;"><line y2="-470" x2="0"></line><text dy=".71em" y="7" x="0" style="text-anchor: middle;">5/26</text></g><g class="tick" transform="translate(579.4444444444445,0)" style="opacity: 1;"><line y2="-470" x2="0"></line><text dy=".71em" y="7" x="0" style="text-anchor: middle;">6/4</text></g><g class="tick" transform="translate(662.2222222222222,0)" style="opacity: 1;"><line y2="-470" x2="0"></line><text dy=".71em" y="7" x="0" style="text-anchor: middle;">6/11</text></g><path class="domain" d="M0,0V0H745V0"></path><text class="nv-axislabel" text-anchor="middle" y="36" x="372.5">日</text></g><g class="nv-axisMaxMin" transform="translate(0,0)"><text dy=".71em" y="7" transform="rotate(0 0,0)" style="text-anchor: middle;">3/29</text></g><g class="nv-axisMaxMin" transform="translate(745,0)"><text dy=".71em" y="7" transform="rotate(0 0,0)" style="text-anchor: middle;">6/18</text></g></g></g><g class="nv-y nv-axis"><g class="nvd3 nv-wrap nv-axis"><g><g class="tick" transform="translate(0,450.61236932274903)" style="opacity: 1;"><line x2="745" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">120.0</text></g><g class="tick" transform="translate(0,416.389240105212)" style="opacity: 1;"><line x2="745" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">122.0</text></g><g class="tick" transform="translate(0,382.166110887675)" style="opacity: 1;"><line x2="745" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">124.0</text></g><g class="tick" transform="translate(0,347.94298167013807)" style="opacity: 1;"><line x2="745" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">126.0</text></g><g class="tick" transform="translate(0,313.719852452601)" style="opacity: 1;"><line x2="745" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">128.0</text></g><g class="tick" transform="translate(0,279.496723235064)" style="opacity: 1;"><line x2="745" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">130.0</text></g><g class="tick" transform="translate(0,245.27359401752702)" style="opacity: 1;"><line x2="745" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">132.0</text></g><g class="tick" transform="translate(0,211.05046479999)" style="opacity: 1;"><line x2="745" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">134.0</text></g><g class="tick" transform="translate(0,176.82733558245303)" style="opacity: 1;"><line x2="745" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">136.0</text></g><g class="tick" transform="translate(0,142.604206364916)" style="opacity: 1;"><line x2="745" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">138.0</text></g><g class="tick" transform="translate(0,108.38107714737899)" style="opacity: 1;"><line x2="745" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">140.0</text></g><g class="tick" transform="translate(0,74.15794792984201)" style="opacity: 1;"><line x2="745" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">142.0</text></g><g class="tick" transform="translate(0,39.93481871230499)" style="opacity: 1;"><line x2="745" y2="0"></line><text dy=".32em" x="-3" opacity="1" style="text-anchor: end;" y="0">144.0</text></g><g class="tick" transform="translate(0,5.711689494767965)" opacity="0" style="opacity: 1;"><line x2="745" y2="0"></line><text dy=".32em" x="-3" opacity="0" style="text-anchor: end;" y="0">146.0</text></g><path class="domain" d="M0,0H0V470H0"></path><text class="nv-axislabel" transform="rotate(-90)" y="-63" x="-235" style="text-anchor: middle;">球速平均</text></g><g class="nv-axisMaxMin" transform="translate(0,470)"><text dy=".32em" y="0" x="-3" text-anchor="end" style="opacity: 1;">118.9</text></g><g class="nv-axisMaxMin" transform="translate(0,0)"><text dy=".32em" y="0" x="-3" text-anchor="end" style="opacity: 1;">146.3</text></g></g></g><g class="nv-linesWrap"><g class="nvd3 nv-wrap nv-line" transform="translate(0,0)" style="stroke-width: 3;"><defs><clipPath id="nv-edge-clip-6936"><rect width="745" height="470"></rect></clipPath></defs><g clip-path=""><g class="nv-groups"><g class="nv-group nv-series-0" style="stroke-opacity: 1; fill-opacity: 0.5; fill: blue; stroke: blue;"><path class="nv-line" d="M0,33.935340978874095L82.77777777777777,14.459839032985025L165.55555555555554,8.52923630485576L248.33333333333331,24.14926221353178L331.1111111111111,16.772500164338894L413.8888888888889,23.91146822176711L496.66666666666663,9.725569236697716L579.4444444444445,4.943897199896159L662.2222222222222,0.6319807410250489L745,2.323649812185775" style="stroke-width: 3;"></path></g><g class="nv-group nv-series-1" style="stroke-opacity: 1; fill-opacity: 0.5; fill: yellowgreen; stroke: yellowgreen;"><path class="nv-line" d="M0,20.690575210691048L82.77777777777777,4.062888631422568L165.55555555555554,23.935548616625297L248.33333333333331,20.69467450825246L331.1111111111111,48.13076968234425L413.8888888888889,49.51251587272626L496.66666666666663,0L579.4444444444445,9.120045146751124L662.2222222222222,3.3602512720011237L745,12.423355707309517" style="stroke-width: 3;"></path></g><g class="nv-group nv-series-2" style="stroke-opacity: 1; fill-opacity: 0.5; fill: brown; stroke: brown;"><path class="nv-line" d="M0,80.5011605938853L82.77777777777777,73.14890474101053L165.55555555555554,81.61861232695158L248.33333333333331,99.30640531741845L331.1111111111111,93.01519823916149L413.8888888888889,100.82677661850406L496.66666666666663,75.91170287299104L579.4444444444445,55.08777237350711L662.2222222222222,51.98853267044255L745,56.62470648792231" style="stroke-width: 3;"></path></g><g class="nv-group nv-series-3" style="stroke-opacity: 1; fill-opacity: 0.5; fill: purple; stroke: purple;"><path class="nv-line" d="M0,319.53255633541244L82.77777777777777,285.3106818322638L165.55555555555554,266.78112906752176L248.33333333333331,302.555485336042L331.1111111111111,275.0902985247831L413.8888888888889,307.38512795108625L496.66666666666663,326.71801638337143L579.4444444444445,298.07962220512957L662.2222222222222,263.5667592237471L745,283.7494668807428" style="stroke-width: 3;"></path></g><g class="nv-group nv-series-4" style="stroke-opacity: 1; fill-opacity: 0.5; fill: orange; stroke: orange;"><path class="nv-line" d="M0,432.411671510891L82.77777777777777,417.40343843830374L165.55555555555554,417.30922151630904L248.33333333333331,446.9119047895539L331.1111111111111,450.61900469819454L413.8888888888889,436.4621668523637L496.66666666666663,470L579.4444444444445,391.95436564847864L662.2222222222222,398.7384748900073L745,407.81561149122507" style="stroke-width: 3;"></path></g><g class="nv-group nv-series-5" style="stroke-opacity: 1; fill-opacity: 0.5; fill: pink; stroke: pink;"><path class="nv-line" d="M0,100.65061829684412L82.77777777777777,109.37077343095567L165.55555555555554,95.89833405016563L248.33333333333331,103.74016986208146L331.1111111111111,95.32495145873982L413.8888888888889,108.2131996137707L496.66666666666663,88.05647405917952L579.4444444444445,77.36795441645053L662.2222222222222,44.90984456447157L745,69.56277208039191" style="stroke-width: 3;"></path></g><g class="nv-group nv-series-6" style="stroke-opacity: 1; fill-opacity: 0.5; fill: green; stroke: green;"><path class="nv-line" d="M0,231.7908333605168L82.77777777777777,198.97042994874266L165.55555555555554,126.15883560548026L248.33333333333331,222.21860561724435L331.1111111111111,189.9353355381389L413.8888888888889,207.38877389311887L496.66666666666663,249.21565649444835L579.4444444444445,217.598583189682L662.2222222222222,195.8797103895067L745,236.88587675301733" style="stroke-width: 3;"></path></g></g><g class="nv-scatterWrap" clip-path=""><g class="nvd3 nv-wrap nv-scatter nv-chart-6936" transform="translate(0,0)"><defs><clipPath id="nv-edge-clip-6936"><rect width="745" height="470"></rect></clipPath></defs><g clip-path=""><g class="nv-groups"><g class="nv-group nv-series-0" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: rgb(0, 0, 255); fill: rgb(0, 0, 255);"><circle cx="0" cy="33.935340978874095" r="2.256758334191025" class="nv-point nv-point-0" style="fill-opacity: 0.7;"></circle><circle cx="82.77777777777777" cy="14.459839032985025" r="2.256758334191025" class="nv-point nv-point-1" style="fill-opacity: 0.7;"></circle><circle cx="165.55555555555554" cy="8.52923630485576" r="2.256758334191025" class="nv-point nv-point-2" style="fill-opacity: 0.7;"></circle><circle cx="248.33333333333331" cy="24.14926221353178" r="2.256758334191025" class="nv-point nv-point-3" style="fill-opacity: 0.7;"></circle><circle cx="331.1111111111111" cy="16.772500164338894" r="2.256758334191025" class="nv-point nv-point-4" style="fill-opacity: 0.7;"></circle><circle cx="413.8888888888889" cy="23.91146822176711" r="2.256758334191025" class="nv-point nv-point-5" style="fill-opacity: 0.7;"></circle><circle cx="496.66666666666663" cy="9.725569236697716" r="2.256758334191025" class="nv-point nv-point-6" style="fill-opacity: 0.7;"></circle><circle cx="579.4444444444445" cy="4.943897199896159" r="2.256758334191025" class="nv-point nv-point-7" style="fill-opacity: 0.7;"></circle><circle cx="662.2222222222222" cy="0.6319807410250489" r="2.256758334191025" class="nv-point nv-point-8" style="fill-opacity: 0.7;"></circle><circle cx="745" cy="2.323649812185775" r="2.256758334191025" class="nv-point nv-point-9" style="fill-opacity: 0.7;"></circle></g><g class="nv-group nv-series-1" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: rgb(154, 205, 50); fill: rgb(154, 205, 50);"><circle cx="0" cy="20.690575210691048" r="2.256758334191025" class="nv-point nv-point-0" style="fill-opacity: 0.7;"></circle><circle cx="82.77777777777777" cy="4.062888631422568" r="2.256758334191025" class="nv-point nv-point-1" style="fill-opacity: 0.7;"></circle><circle cx="165.55555555555554" cy="23.935548616625297" r="2.256758334191025" class="nv-point nv-point-2" style="fill-opacity: 0.7;"></circle><circle cx="248.33333333333331" cy="20.69467450825246" r="2.256758334191025" class="nv-point nv-point-3" style="fill-opacity: 0.7;"></circle><circle cx="331.1111111111111" cy="48.13076968234425" r="2.256758334191025" class="nv-point nv-point-4" style="fill-opacity: 0.7;"></circle><circle cx="413.8888888888889" cy="49.51251587272626" r="2.256758334191025" class="nv-point nv-point-5" style="fill-opacity: 0.7;"></circle><circle cx="496.66666666666663" cy="0" r="2.256758334191025" class="nv-point nv-point-6" style="fill-opacity: 0.7;"></circle><circle cx="579.4444444444445" cy="9.120045146751124" r="2.256758334191025" class="nv-point nv-point-7" style="fill-opacity: 0.7;"></circle><circle cx="662.2222222222222" cy="3.3602512720011237" r="2.256758334191025" class="nv-point nv-point-8" style="fill-opacity: 0.7;"></circle><circle cx="745" cy="12.423355707309517" r="2.256758334191025" class="nv-point nv-point-9" style="fill-opacity: 0.7;"></circle></g><g class="nv-group nv-series-2" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: rgb(165, 42, 42); fill: rgb(165, 42, 42);"><circle cx="0" cy="80.5011605938853" r="2.256758334191025" class="nv-point nv-point-0" style="fill-opacity: 0.7;"></circle><circle cx="82.77777777777777" cy="73.14890474101053" r="2.256758334191025" class="nv-point nv-point-1" style="fill-opacity: 0.7;"></circle><circle cx="165.55555555555554" cy="81.61861232695158" r="2.256758334191025" class="nv-point nv-point-2" style="fill-opacity: 0.7;"></circle><circle cx="248.33333333333331" cy="99.30640531741845" r="2.256758334191025" class="nv-point nv-point-3" style="fill-opacity: 0.7;"></circle><circle cx="331.1111111111111" cy="93.01519823916149" r="2.256758334191025" class="nv-point nv-point-4" style="fill-opacity: 0.7;"></circle><circle cx="413.8888888888889" cy="100.82677661850406" r="2.256758334191025" class="nv-point nv-point-5" style="fill-opacity: 0.7;"></circle><circle cx="496.66666666666663" cy="75.91170287299104" r="2.256758334191025" class="nv-point nv-point-6" style="fill-opacity: 0.7;"></circle><circle cx="579.4444444444445" cy="55.08777237350711" r="2.256758334191025" class="nv-point nv-point-7" style="fill-opacity: 0.7;"></circle><circle cx="662.2222222222222" cy="51.98853267044255" r="2.256758334191025" class="nv-point nv-point-8" style="fill-opacity: 0.7;"></circle><circle cx="745" cy="56.62470648792231" r="2.256758334191025" class="nv-point nv-point-9" style="fill-opacity: 0.7;"></circle></g><g class="nv-group nv-series-3" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: rgb(128, 0, 128); fill: rgb(128, 0, 128);"><circle cx="0" cy="319.53255633541244" r="2.256758334191025" class="nv-point nv-point-0" style="fill-opacity: 0.7;"></circle><circle cx="82.77777777777777" cy="285.3106818322638" r="2.256758334191025" class="nv-point nv-point-1" style="fill-opacity: 0.7;"></circle><circle cx="165.55555555555554" cy="266.78112906752176" r="2.256758334191025" class="nv-point nv-point-2" style="fill-opacity: 0.7;"></circle><circle cx="248.33333333333331" cy="302.555485336042" r="2.256758334191025" class="nv-point nv-point-3" style="fill-opacity: 0.7;"></circle><circle cx="331.1111111111111" cy="275.0902985247831" r="2.256758334191025" class="nv-point nv-point-4" style="fill-opacity: 0.7;"></circle><circle cx="413.8888888888889" cy="307.38512795108625" r="2.256758334191025" class="nv-point nv-point-5" style="fill-opacity: 0.7;"></circle><circle cx="496.66666666666663" cy="326.71801638337143" r="2.256758334191025" class="nv-point nv-point-6" style="fill-opacity: 0.7;"></circle><circle cx="579.4444444444445" cy="298.07962220512957" r="2.256758334191025" class="nv-point nv-point-7" style="fill-opacity: 0.7;"></circle><circle cx="662.2222222222222" cy="263.5667592237471" r="2.256758334191025" class="nv-point nv-point-8" style="fill-opacity: 0.7;"></circle><circle cx="745" cy="283.7494668807428" r="2.256758334191025" class="nv-point nv-point-9" style="fill-opacity: 0.7;"></circle></g><g class="nv-group nv-series-4" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: rgb(255, 165, 0); fill: rgb(255, 165, 0);"><circle cx="0" cy="432.411671510891" r="2.256758334191025" class="nv-point nv-point-0" style="fill-opacity: 0.7;"></circle><circle cx="82.77777777777777" cy="417.40343843830374" r="2.256758334191025" class="nv-point nv-point-1" style="fill-opacity: 0.7;"></circle><circle cx="165.55555555555554" cy="417.30922151630904" r="2.256758334191025" class="nv-point nv-point-2" style="fill-opacity: 0.7;"></circle><circle cx="248.33333333333331" cy="446.9119047895539" r="2.256758334191025" class="nv-point nv-point-3" style="fill-opacity: 0.7;"></circle><circle cx="331.1111111111111" cy="450.61900469819454" r="2.256758334191025" class="nv-point nv-point-4" style="fill-opacity: 0.7;"></circle><circle cx="413.8888888888889" cy="436.4621668523637" r="2.256758334191025" class="nv-point nv-point-5" style="fill-opacity: 0.7;"></circle><circle cx="496.66666666666663" cy="470" r="2.256758334191025" class="nv-point nv-point-6" style="fill-opacity: 0.7;"></circle><circle cx="579.4444444444445" cy="391.95436564847864" r="2.256758334191025" class="nv-point nv-point-7" style="fill-opacity: 0.7;"></circle><circle cx="662.2222222222222" cy="398.7384748900073" r="2.256758334191025" class="nv-point nv-point-8" style="fill-opacity: 0.7;"></circle><circle cx="745" cy="407.81561149122507" r="2.256758334191025" class="nv-point nv-point-9" style="fill-opacity: 0.7;"></circle></g><g class="nv-group nv-series-5" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: rgb(255, 192, 203); fill: rgb(255, 192, 203);"><circle cx="0" cy="100.65061829684412" r="2.256758334191025" class="nv-point nv-point-0" style="fill-opacity: 0.7;"></circle><circle cx="82.77777777777777" cy="109.37077343095567" r="2.256758334191025" class="nv-point nv-point-1" style="fill-opacity: 0.7;"></circle><circle cx="165.55555555555554" cy="95.89833405016563" r="2.256758334191025" class="nv-point nv-point-2" style="fill-opacity: 0.7;"></circle><circle cx="248.33333333333331" cy="103.74016986208146" r="2.256758334191025" class="nv-point nv-point-3" style="fill-opacity: 0.7;"></circle><circle cx="331.1111111111111" cy="95.32495145873982" r="2.256758334191025" class="nv-point nv-point-4" style="fill-opacity: 0.7;"></circle><circle cx="413.8888888888889" cy="108.2131996137707" r="2.256758334191025" class="nv-point nv-point-5" style="fill-opacity: 0.7;"></circle><circle cx="496.66666666666663" cy="88.05647405917952" r="2.256758334191025" class="nv-point nv-point-6" style="fill-opacity: 0.7;"></circle><circle cx="579.4444444444445" cy="77.36795441645053" r="2.256758334191025" class="nv-point nv-point-7" style="fill-opacity: 0.7;"></circle><circle cx="662.2222222222222" cy="44.90984456447157" r="2.256758334191025" class="nv-point nv-point-8" style="fill-opacity: 0.7;"></circle><circle cx="745" cy="69.56277208039191" r="2.256758334191025" class="nv-point nv-point-9" style="fill-opacity: 0.7;"></circle></g><g class="nv-group nv-series-6" style="stroke-opacity: 1; fill-opacity: 0.5; stroke: rgb(0, 128, 0); fill: rgb(0, 128, 0);"><circle cx="0" cy="231.7908333605168" r="2.256758334191025" class="nv-point nv-point-0" style="fill-opacity: 0.7;"></circle><circle cx="82.77777777777777" cy="198.97042994874266" r="2.256758334191025" class="nv-point nv-point-1" style="fill-opacity: 0.7;"></circle><circle cx="165.55555555555554" cy="126.15883560548026" r="2.256758334191025" class="nv-point nv-point-2" style="fill-opacity: 0.7;"></circle><circle cx="248.33333333333331" cy="222.21860561724435" r="2.256758334191025" class="nv-point nv-point-3" style="fill-opacity: 0.7;"></circle><circle cx="331.1111111111111" cy="189.9353355381389" r="2.256758334191025" class="nv-point nv-point-4" style="fill-opacity: 0.7;"></circle><circle cx="413.8888888888889" cy="207.38877389311887" r="2.256758334191025" class="nv-point nv-point-5" style="fill-opacity: 0.7;"></circle><circle cx="496.66666666666663" cy="249.21565649444835" r="2.256758334191025" class="nv-point nv-point-6" style="fill-opacity: 0.7;"></circle><circle cx="579.4444444444445" cy="217.598583189682" r="2.256758334191025" class="nv-point nv-point-7" style="fill-opacity: 0.7;"></circle><circle cx="662.2222222222222" cy="195.8797103895067" r="2.256758334191025" class="nv-point nv-point-8" style="fill-opacity: 0.7;"></circle><circle cx="745" cy="236.88587675301733" r="2.256758334191025" class="nv-point nv-point-9" style="fill-opacity: 0.7;"></circle></g></g><g class="nv-point-paths"></g></g></g></g></g></g></g><g class="nv-legendWrap" transform="translate(0,-30)"><g class="nvd3 nv-legend" transform="translate(0,5)"><g transform="translate(255,5)"><g class="nv-series" transform="translate(0,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: blue; stroke: blue;"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8">速球</text></g><g class="nv-series" transform="translate(70,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: yellowgreen; stroke: yellowgreen;"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8">ｼｭｰﾄ</text></g><g class="nv-series" transform="translate(140,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: brown; stroke: brown;"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8">ｶｯﾄ</text></g><g class="nv-series" transform="translate(210,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: purple; stroke: purple;"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8">ｽﾗｲﾀﾞｰ</text></g><g class="nv-series" transform="translate(280,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: orange; stroke: orange;"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8">ｶｰﾌﾞ</text></g><g class="nv-series" transform="translate(350,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: pink; stroke: pink;"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8">ﾌｫｰｸ</text></g><g class="nv-series" transform="translate(420,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: green; stroke: green;"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8">ﾁｪﾝｼﾞｱｯﾌﾟ</text></g></g></g></g><g class="nv-interactive"><g class=" nv-wrap nv-interactiveLineLayer"><g class="nv-interactiveGuideLine"></g></g></g></g></g></svg>
                   </div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card">
-                  <div class="card-header">Card with label
-                    <div class="card-header-actions" style="height: 21px;">
-                      <span class="badge badge-success">Success</span>
-                    </div>
+                  
+                  <div id="sub_chart" style="display: none;">
                   </div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card">
-                  <div class="card-header">Card with label
-                    <div class="card-header-actions" style="height: 21px;">
-                      <span class="badge badge-pill badge-danger">42</span>
-                    </div>
-                  </div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-            </div>
-            <!-- /.row-->
-            <div class="row">
-              <div class="col-sm-6 col-md-4">
-                <div class="card border-primary">
-                  <div class="card-header">Card outline</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card border-secondary">
-                  <div class="card-header">Card outline</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card border-success">
-                  <div class="card-header">Card outline</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card border-info">
-                  <div class="card-header">Card outline</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card border-warning">
-                  <div class="card-header">Card outline</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card border-danger">
-                  <div class="card-header">Card outline</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-            </div>
-            <!-- /.row-->
-            <div class="row">
-              <div class="col-sm-6 col-md-4">
-                <div class="card card-accent-primary">
-                  <div class="card-header">Card with accent</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card card-accent-secondary">
-                  <div class="card-header">Card with accent</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card card-accent-success">
-                  <div class="card-header">Card with accent</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card card-accent-info">
-                  <div class="card-header">Card with accent</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card card-accent-warning">
-                  <div class="card-header">Card with accent</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card card-accent-danger">
-                  <div class="card-header">Card with accent</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-            </div>
-            <!-- /.row-->
-            <div class="row">
-              <div class="col-sm-6 col-md-4">
-                <div class="card text-white bg-primary text-center">
-                  <div class="card-body">
-                    <blockquote class="card-bodyquote">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                      <footer>Someone famous in
-                        <cite title="Source Title">Source Title</cite>
-                      </footer>
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card text-white bg-success text-center">
-                  <div class="card-body">
-                    <blockquote class="card-bodyquote">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                      <footer>Someone famous in
-                        <cite title="Source Title">Source Title</cite>
-                      </footer>
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card text-white bg-info text-center">
-                  <div class="card-body">
-                    <blockquote class="card-bodyquote">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                      <footer>Someone famous in
-                        <cite title="Source Title">Source Title</cite>
-                      </footer>
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card text-white bg-warning text-center">
-                  <div class="card-body">
-                    <blockquote class="card-bodyquote">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                      <footer>Someone famous in
-                        <cite title="Source Title">Source Title</cite>
-                      </footer>
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card text-white bg-danger text-center">
-                  <div class="card-body">
-                    <blockquote class="card-bodyquote">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                      <footer>Someone famous in
-                        <cite title="Source Title">Source Title</cite>
-                      </footer>
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card text-white bg-primary text-center">
-                  <div class="card-body">
-                    <blockquote class="card-bodyquote">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                      <footer>Someone famous in
-                        <cite title="Source Title">Source Title</cite>
-                      </footer>
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
-              <!-- /.col-->
-            </div>
-            <!-- /.row-->
-            <div class="row">
-              <div class="col-sm-6 col-md-4">
-                <div class="card text-white bg-primary">
-                  <div class="card-header">Card title</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card text-white bg-success">
-                  <div class="card-header">Card title</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card text-white bg-info">
-                  <div class="card-header">Card title</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card text-white bg-warning">
-                  <div class="card-header">Card title</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card text-white bg-danger">
-                  <div class="card-header">Card title</div>
-                  <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                    ut aliquip ex ea commodo consequat.</div>
-                </div>
-              </div>
-              <!-- /.col-->
-              <div class="col-sm-6 col-md-4">
-                <div class="card">
-                  <div class="card-header">Card actions
-                    <div class="card-header-actions">
-                      <a class="card-header-action btn-setting" href="#">
-                        <i class="icon-settings"></i>
-                      </a>
-                      <a class="card-header-action btn-minimize" href="#" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true">
-                        <i class="icon-arrow-up"></i>
-                      </a>
-                      <a class="card-header-action btn-close" href="#">
-                        <i class="icon-close"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="collapse show" id="collapseExample">
-                    <div class="card-body">
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex
-                      ea commodo consequat.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /.col-->
-            </div>
-            <!-- /.row-->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="modal-title">Modal title</h4>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">×</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <p>One fine body…</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
-                    <button class="btn btn-primary" type="button">Save changes</button>
-                  </div>
-                </div>
-                <!-- /.modal-content-->
-              </div>
-              <!-- /.modal-dialog-->
-            </div>
+                </div>  
           </div>
         </div>
       </main>
